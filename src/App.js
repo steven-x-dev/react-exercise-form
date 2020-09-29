@@ -1,13 +1,27 @@
 import React from 'react';
 import './App.less';
 import MyProfile from "./components/MyProfile";
+import Banner from "./common/Banner";
 
-const App = () => {
-  return (
-    <div className='App'>
-      <MyProfile/>
-    </div>
-  );
-};
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <Banner />
+        <MyProfile
+          notify={this.notify}
+        />
+      </div>
+    );
+  }
+}
 
 export default App;
