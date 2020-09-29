@@ -41,42 +41,53 @@ class MyProfile extends Component {
         <h2>My Profile</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
+            Name
             <br />
-            <input
-              type='text'
-              name='name'
-              onChange={this.handleChange}
-              value={this.state.name} />
+            <div className='input-wrapper'>
+              <input
+                type='text'
+                name='name'
+                className='normal'
+                placeholder='Your name'
+                onChange={this.handleChange}
+                value={this.state.name} />
+            </div>
           </label>
           <label>
-            Gender:
+            Gender
             <br />
-            <select
-              name='gender'
-              onChange={this.handleChange}
-              value={this.state.gender}>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
+            <div className='input-wrapper'>
+              <select
+                name='gender'
+                onChange={this.handleChange}
+                value={this.state.gender}>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
           </label>
           <label>
-            Description:
+            Description
             <br />
-            <textarea
-              name='description'
-              onChange={this.handleChange}
-              value={this.state.description} />
+            <div className='input-wrapper'>
+              <textarea
+                name='description'
+                placeholder='Description about yourself'
+                onChange={this.handleChange}
+                value={this.state.description}
+              />
+            </div>
           </label>
-          <label>
+          <label className='terms-label'>
             <input
               type="checkbox"
               name="read"
+              className='terms-checkbox'
               checked={this.state.read}
               onChange={this.toggleCheckbox} />
-            I have read the terms of conduct
+            <span className='terms-text'>&nbsp;I have read the terms of conduct</span>
           </label>
-          <input type='submit' />
+          <input type='submit' className='btn-submit' value='Submit' />
         </form>
       </div>
     );
